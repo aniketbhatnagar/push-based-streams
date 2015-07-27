@@ -1,1 +1,11 @@
 Just a (really) simple push based streaming processing framework
+=====================================================================
+
+Example:
+val stream: Stream[String] = ...
+val sumFuture = stream.map(_.toInt).fold(0)((oldSum, number) => oldSum + number)
+sumFuture.onComplete(println)
+
+====================================================================
+For a more involved example, refer to WindowedReport.scala.
+
